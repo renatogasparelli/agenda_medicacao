@@ -4,7 +4,7 @@
 import lib.calendario as cal
 import collections as col
 
-Registro = col.namedtuple( 'Registro', 'datahora quantidade sentido' )
+Registro = col.namedtuple( 'Registro', 'datahora quantidade sentido valor' )
 
 from lib.medicamentos import *
 
@@ -22,13 +22,13 @@ class __Estoque(object):
     def medicamento(self):
         return self.__medicamento
 
-    def registrar_entrada( self, datahora, quantidade ):
-        self.__registros.append( Registro( datahora, quantidade, 'e' ) )
+    def registrar_entrada( self, datahora, quantidade, valor=0 ):
+        self.__registros.append( Registro( datahora, quantidade, 'e', valor ) )
     
     def registrar_saida( self, datahora, quantidade ):
         if self.saldo( datahora ) <= 0:
             raise SaldoInsuficienteException('Medicamento em falta')
-        self.__registros.append( Registro( datahora, quantidade, 's' ) )
+        self.__registros.append( Registro( datahora, quantidade, 's', 0 ) )
     
     def saldo( self, ate=None ):
         acm = 0
@@ -73,9 +73,13 @@ obter_estoque( Enoxoparina ).registrar_entrada( databalanco, 25 )
 obter_estoque( AdderaD3 ).registrar_entrada( databalanco, 7 )
 
 
-dataregistro = cal.datahora( 2018, 10, 02, 9, 00 )
+dataregistro = cal.datahora( 2018, 10, 02, 1, 00 )
 obter_estoque( Metilfolato ).registrar_entrada( dataregistro, 90 )
 
+dataregistro = cal.datahora( 2018, 10, 02, 12, 00 )
+obter_estoque( Omega3 ).registrar_entrada( dataregistro, 30, 58.83 )
+obter_estoque( Utrogestan ).registrar_entrada( dataregistro, 42, 120.08 )
+obter_estoque( Duphostan ).registrar_entrada( dataregistro, 28, 45.00 )
 
 
 
