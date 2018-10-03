@@ -8,7 +8,6 @@ Registro = col.namedtuple( 'Registro', 'datahora quantidade sentido valor' )
 
 from lib.medicamentos import *
 
-Estoques = {}
 
 class SaldoInsuficienteException ( Exception ): pass
 
@@ -17,10 +16,12 @@ class __Estoque(object):
     def __init__(self, medicamento):
         self.__medicamento = medicamento
         self.__registros = []
-        Estoques[ self.__medicamento.nome() ] = self
         
     def medicamento(self):
         return self.__medicamento
+
+    def datasregistros(self):
+        return sorted( [ x.datahora for x in self.__registros ] )
 
     def registrar_entrada( self, datahora, quantidade, valor=0 ):
         self.__registros.append( Registro( datahora, quantidade, 'e', valor ) )
@@ -45,18 +46,7 @@ class __Estoque(object):
 def obter_estoque( medicamento ):
     return Estoques[ medicamento.nome() ]
 
-__Estoque( Utrogestan   )
-__Estoque( Metilfolato  )
-__Estoque( VitaminaC    )
-__Estoque( BTrati       )
-__Estoque( Omega3       )
-__Estoque( VitaminaE    )
-__Estoque( Somalgin     )
-__Estoque( Smorfolipide )
-__Estoque( Enoxoparina  )
-__Estoque( Duphostan    )
-__Estoque( AdderaD3     )
-
+Estoques = { x.nome() : __Estoque( x ) for x in Medicamentos }
 
 
 databalanco = cal.DATA_CONTROLE_ESTOQUE
