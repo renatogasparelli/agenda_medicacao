@@ -14,6 +14,34 @@ def datahora_split( x ):
     sx = str(x)
     return sx[0:10] + ', ' + cal.dia_da_semana( x ), sx[10:16]
 
+def exporta_expectativa_consumo():
+    sga = cal.qual_semana_gestacao( cal.hoje() )
+    sgf = min( sga + 6, cal.SEMANAS_GESTACAO_TOTAL - sga + 1)
+    data = {}
+    for i in range( sga, sgf ):
+        sg = cal.semana_gestacao(i)
+        sgkey = str(sg.inicio)[:10] + u' até ' + str(sg.fim)[:10]
+        data[  sgkey ] = {}
+        for medicamento in Medicamentos:
+            quantidade_acumulada = 0
+            posologia = obter_posologia( medicamento )
+            for agendamento in posologia.agendamentos():
+                if sg.inicio <= agendamento.datahora <= sg.fim:
+                    quantidade_acumulada += agendamento.quantidade
+            data[ sgkey ][ medicamento.nome() ] = quantidade_acumulada
+    
+    table = []
+    header = [ 'Medicamento' ] + [ x for x in sorted(data.keys()) ]
+    table.append( '\t'.join(header) )
+    ref = data[ header[1] ]
+    for med in sorted(ref.keys()):
+        line = [ med ] + [ str(data[x][med]) for x in sorted(data.keys()) ]
+        table.append( '\t'.join(line) )
+    
+    with codecs.open( 'consumo.txt', 'w', 'utf-8') as fout:
+        fout.write( '\n'.join(table) )
+
+
 def exporta_dados_planilha():
     
     hoje = cal.hoje()

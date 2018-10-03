@@ -29,7 +29,7 @@ for evento in Eventos:
 exporta_registros_agendamento( report )
 exporta_agendamentos_complexos()
 exporta_dados_planilha()
-        
+exporta_expectativa_consumo()
     
     
 
