@@ -59,14 +59,16 @@ data_cuidado_borrinha = cal.data( 2018, 10, 2 )
 
 for dia in cal.dias_entre( cal.DATA_CONTROLE_ESTOQUE, cal.DATA_CONTROLE_ESTOQUE_FIM ):
     
+    Posologia_Enoxoparina.agendar( cal.agendamento( dia, 7, 00 ), 1 )
+    Posologia_Omega3.agendar( cal.agendamento( dia, 12, 00 ), 1  )
+    
     if dia <= cal.semana_gestacao(12).fim:
         Posologia_Metilfolato.agendar( cal.agendamento( dia, 7, 00 ), 1  )
         Posologia_VitaminaC.agendar( cal.agendamento( dia, 7, 00 ), 1  )
         Posologia_VitaminaE.agendar( cal.agendamento( dia, 13, 00 ), 1  )
-        Posologia_Enoxoparina.agendar( cal.agendamento( dia, 7, 00 ), 1 )
         Posologia_BTrati.agendar( cal.agendamento( dia, 7, 00 ), 1  )
         if cal.eh_sabado(dia):
-            Posologia_AdderaD3.agendar( cal.agendamento( dia,  7, 30 ), 2 )
+            Posologia_AdderaD3.agendar( cal.agendamento( dia,  7, 30 ), 1 )
     
     if dia > cal.semana_gestacao(12).fim:
         Posologia_CalcioK2.agendar( cal.agendamento( dia, 12, 00 ), 1 )
@@ -74,8 +76,6 @@ for dia in cal.dias_entre( cal.DATA_CONTROLE_ESTOQUE, cal.DATA_CONTROLE_ESTOQUE_
         
     if dia <= cal.semana_gestacao(36).fim:
         Posologia_Somalgin.agendar( cal.agendamento( dia, 7, 00 ), 1  )
-    
-    Posologia_Omega3.agendar( cal.agendamento( dia, 12, 00 ), 1  )
     
     if dia <= cal.semana_gestacao(8).fim:
         Posologia_Duphostan.agendar( cal.agendamento( dia,  6, 30 ), 2 )

@@ -39,7 +39,7 @@ for medicacao in Posologias.values():
 
 Eventos.append( EExame( u'Exame Controle Heparina: Anti Xa', cal.semana_gestacao(12).inicio ) )
 
-data_inicio_heparina = cal.INICIO_GESTACAO
+data_inicio_heparina = cal.BETA_HCG
 for dia in cal.dias_entre( data_inicio_heparina, data_inicio_heparina + 3 * 28 * cal.UM_DIA , 28 ):
     Eventos.append( EExame( u'Exame Ajuste dosagem Heparina: TTPA e TP/AP ', dia ) )
 

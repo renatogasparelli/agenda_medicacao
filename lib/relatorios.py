@@ -15,7 +15,7 @@ def datahora_split( x ):
     return sx[0:10] + ', ' + cal.dia_da_semana( x ), sx[10:16]
 
 def exporta_expectativa_consumo():
-    sga = cal.qual_semana_gestacao( cal.hoje() )
+    sga = cal.qual_semana_gestacao( cal.hoje() ) + 1
     sgf = min( sga + 6, cal.SEMANAS_GESTACAO_TOTAL - sga + 1)
     data = {}
     for i in range( sga, sgf ):
@@ -30,12 +30,21 @@ def exporta_expectativa_consumo():
                     quantidade_acumulada += agendamento.quantidade
             data[ sgkey ][ medicamento.nome() ] = quantidade_acumulada
     
+    
+    sg = cal.semana_gestacao( sga )
     table = []
-    header = [ 'Medicamento' ] + [ x for x in sorted(data.keys()) ]
+    header = [ '', '', '' ] + [ str(x) for x in range( sga, sgf ) ]
     table.append( '\t'.join(header) )
-    ref = data[ header[1] ]
+    header = [ 'Medicamento', 'Estoque Inicial', 'Necessidade' ] + [ x for x in sorted(data.keys()) ]
+    table.append( '\t'.join(header) )
+    ref = data[ header[ -1 ] ]
     for med in sorted(ref.keys()):
-        line = [ med ] + [ str(data[x][med]) for x in sorted(data.keys()) ]
+        medicamento = obter_medicamento( med )
+        estoque = obter_estoque( medicamento )
+        saldo = estoque.saldo(sg.inicio)
+        pedir = sum( [ data[x][med] for x in sorted(data.keys())] ) - saldo
+        if pedir < 0: pedir = 0
+        line = [ med, str( saldo ), str(pedir)  ] + [ str(data[x][med]) for x in sorted(data.keys()) ]
         table.append( '\t'.join(line) )
     
     with codecs.open( 'consumo.txt', 'w', 'utf-8') as fout:

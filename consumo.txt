@@ -1,13 +1,14 @@
-Medicamento	2018-10-01 até 2018-10-07	2018-10-08 até 2018-10-14	2018-10-15 até 2018-10-21	2018-10-22 até 2018-10-28	2018-10-29 até 2018-11-04	2018-11-05 até 2018-11-11
-5-Metilfolato	6	7	7	7	7	7
-AdderaD3	2	2	2	2	2	2
-BTrati	6	7	7	7	7	7
-CalcioK2	0	0	0	0	0	0
-Duphostan	36	42	42	42	42	0
-Enoxoparina	6	7	7	7	7	7
-Omega3	6	7	7	7	7	7
-Smorfolipide	1	0	0	0	1	0
-Somalgin	6	7	7	7	7	7
-Utrogestan	24	28	28	28	28	28
-VitaminaC	6	7	7	7	7	7
-VitaminaE	6	7	7	7	7	7
+			5	6	7	8	9	10
+Medicamento	Estoque Inicial	Necessidade	2018-10-08 até 2018-10-14	2018-10-15 até 2018-10-21	2018-10-22 até 2018-10-28	2018-10-29 até 2018-11-04	2018-11-05 até 2018-11-11	2018-11-12 até 2018-11-18
+5-Metilfolato	84	0	7	7	7	7	7	7
+AdderaD3	6	0	1	1	1	1	1	1
+BTrati	27	15	7	7	7	7	7	7
+CalcioK2	0	0	0	0	0	0	0	0
+Duphostan	18	150	42	42	42	42	0	0
+Enoxoparina	19	23	7	7	7	7	7	7
+Omega3	25	17	7	7	7	7	7	7
+Smorfolipide	0	1	0	0	0	1	0	0
+Somalgin	45	0	7	7	7	7	7	7
+Utrogestan	30	138	28	28	28	28	28	28
+VitaminaC	12	30	7	7	7	7	7	7
+VitaminaE	15	27	7	7	7	7	7	7

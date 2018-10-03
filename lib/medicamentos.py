@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-
+_HashMedicamentos = {}
 Medicamentos=set()
 
 class __Medicamento(object):
@@ -10,12 +10,14 @@ class __Medicamento(object):
         self.__nome = nome
         self.__unidade = unidade
         Medicamentos.add(self)
+        _HashMedicamentos[ nome ] = self
     
     def nome(self): return self.__nome
     
     def unidade(self): return self.__unidade
         
-
+def obter_medicamento(nome_medicamento):
+    return _HashMedicamentos[nome_medicamento]
 
 Utrogestan   = __Medicamento( 'Utrogestan'   , u'cápsula'   , dosagem='200 mg', quantidade=u'42 cápsulas')
 Metilfolato  = __Medicamento( '5-Metilfolato',  'comprimido', dosagem='1 mg')

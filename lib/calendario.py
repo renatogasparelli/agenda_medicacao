@@ -12,6 +12,7 @@ UM_DIA = datetime.timedelta(days=1)
 
 DATA_CONTROLE_ESTOQUE = datetime.datetime(2018, 10, 02, 0, 0, 0)
 
+BETA_HCG = datetime.datetime(2018, 10, 01)
 INICIO_GESTACAO         = datetime.datetime(2018, 10, 01,  0,  0, 0)  - 3 * 7 * UM_DIA
 INICIO_GESTACAO_FIM_DIA = datetime.datetime(2018, 10, 01, 23, 59, 59) - 3 * 7 * UM_DIA
 
