@@ -1,5 +1,4 @@
 data	AdderaD3	BTrati	Duphostan	Enoxoparina	Omega3	Somalgin	Utrogestan	VitaminaC	VitaminaE
-2018-10-03		32	48	24	30	45	50	17	20
 2018-10-04		31	42	23	29	45	46	16	19
 2018-10-05		30	36	22	28	45	42	15	18
 2018-10-06	7	29	30	21	27	45	38	14	17
@@ -30,3 +29,4 @@ data	AdderaD3	BTrati	Duphostan	Enoxoparina	Omega3	Somalgin	Utrogestan	VitaminaC	
 2018-10-31	3	4	0	0	2	45	0	0	0
 2018-11-01	3	3	0	0	1	45	0	0	0
 2018-11-02	3	2	0	0	0	45	0	0	0
+2018-11-03	3	1	0	0	0	45	0	0	0

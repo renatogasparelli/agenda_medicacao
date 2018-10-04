@@ -55,6 +55,9 @@ Eventos.append( EExame(u'Exame Dopplervelocimetria seriada e perfil biofísico f
 Eventos.append( EConsulta( u'Ginecologista - Dr. Henrique Victor Leite', cal.datahora(2018, 10, 05, 10, 0) ) )
 Eventos.append( EConsulta( u'Hematologista - Drª. Fabiane', cal.datahora(2018, 10, 03, 15, 20) ) )
 
+Eventos.append( EConsulta( u'Ultrassom - Fertibaby', cal.datahora(2018, 10, 25, 9, 30) ) )
+
+
 
 Eventos = sorted( Eventos, key=lambda x : x.datahora() )
 
