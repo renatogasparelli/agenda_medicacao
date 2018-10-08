@@ -72,23 +72,23 @@ def exporta_dados_planilha():
                 estah_tratando = True
                 break
         
-        if not estah_tratando:
-            continue
+        #if not estah_tratando:
+        #    continue
         
         grafico_data[ medicamento.nome() ] = {}
         i = 1
         for dia in cal.dias_entre( hoje, ultdia ):
             fdia = cal.agendamento( dia, 0, 0 )
             sdia = str(fdia)[:10]
-            if posologia.estah_tratando( dia ):
-                saldo = estoque.saldo(fdia)
-                grafico_data[ medicamento.nome() ][ sdia ] = saldo
-            else:
+            saldo = estoque.saldo(fdia)
+            if not estah_tratando and saldo == 0:
                 grafico_data[ medicamento.nome() ][ sdia ] = ''
+            else:
+                grafico_data[ medicamento.nome() ][ sdia ] = saldo
             i+=1
         
-        if  ( grafico_data[medicamento.nome()][sultdia] > 50) :
-            del grafico_data[ medicamento.nome() ]
+        #if  ( grafico_data[medicamento.nome()][sultdia] > 50) :
+        #    del grafico_data[ medicamento.nome() ]
     
     table = []
     header = [ 'data' ] + [ x for x in sorted(grafico_data.keys()) ]
