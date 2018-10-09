@@ -16,7 +16,6 @@ class __Posologia(object):
         self.__aplicacao = []
         self.__tratamento_inicio = None
         self.__tratamento_fim = None
-        self.suspenso = False
         Posologias[ self.__medicamento.nome() ] = self
         
     def medicamento(self):
@@ -52,10 +51,10 @@ Posologia_AdderaD3     = __Posologia( AdderaD3 )
 Posologia_CalcioK2     = __Posologia( CalcioK2 )
 Posologia_Smorfolipide = __Posologia( Smorfolipide )
 
-Posologia_Somalgin.suspenso = True
-
 data_exame_beta = cal.semana_gestacao(4).inicio
 data_cuidado_borrinha = cal.data( 2018, 10, 2 )
+
+reinicio_somalgin = cal.datahora( 2018, 10, 9, 0, 0, 0)
 
 for dia in cal.dias_entre( cal.DATA_CONTROLE_ESTOQUE, cal.DATA_CONTROLE_ESTOQUE_FIM ):
     
@@ -74,8 +73,8 @@ for dia in cal.dias_entre( cal.DATA_CONTROLE_ESTOQUE, cal.DATA_CONTROLE_ESTOQUE_
         Posologia_CalcioK2.agendar( cal.agendamento( dia, 12, 00 ), 1 )
         Posologia_CalcioK2.agendar( cal.agendamento( dia, 18, 00 ), 1 )
         
-    if dia <= cal.semana_gestacao(36).fim:
-        Posologia_Somalgin.agendar( cal.agendamento( dia, 7, 00 ), 1  )
+    if reinicio_somalgin <= dia <= cal.semana_gestacao(36).fim:
+        Posologia_Somalgin.agendar( cal.agendamento( dia, 12, 00 ), 1  )
     
     if dia <= cal.semana_gestacao(8).fim:
         Posologia_Duphostan.agendar( cal.agendamento( dia,  6, 30 ), 2 )
@@ -96,7 +95,7 @@ for dia in cal.dias_entre( cal.DATA_CONTROLE_ESTOQUE, cal.DATA_CONTROLE_ESTOQUE_
             Posologia_Utrogestan.agendar( cal.agendamento( dia, 22, 30 ), 2  )
     elif dia <= cal.semana_gestacao(16).fim:
         Posologia_Utrogestan.agendar( cal.agendamento( dia, 22, 30 ), 1  )
-        
+    
     
 
 smfdelta = 4 * 7 # 4 semanas

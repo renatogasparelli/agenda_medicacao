@@ -24,15 +24,12 @@ class EMedicacao ( _Evento ):
         _Evento.__init__(self, u'Tomar remédio', agendamento.datahora)
         self.__medicamento = medicamento
         self.__agendamento = agendamento
-        self.suspenso = False
     
     def medicamento(self): return self.__medicamento
     def quantidade(self): return self.__agendamento.quantidade
     
 
 for medicacao in Posologias.values():
-    if medicacao.suspenso:
-        continue
     medicamento = medicacao.medicamento()
     for agendamento in medicacao.agendamentos():
         Eventos.append( EMedicacao( medicamento, agendamento ) )
