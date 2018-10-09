@@ -74,7 +74,9 @@ for dia in cal.dias_entre( cal.DATA_CONTROLE_ESTOQUE, cal.DATA_CONTROLE_ESTOQUE_
         Posologia_CalcioK2.agendar( cal.agendamento( dia, 18, 00 ), 1 )
         
     if reinicio_somalgin <= dia <= cal.semana_gestacao(36).fim:
-        Posologia_Somalgin.agendar( cal.agendamento( dia, 12, 00 ), 1  )
+        dias = (dia - reinicio_somalgin).days
+        if dias % 2 == 0:
+            Posologia_Somalgin.agendar( cal.agendamento( dia, 12, 00 ), 1  )
     
     if dia <= cal.semana_gestacao(8).fim:
         Posologia_Duphostan.agendar( cal.agendamento( dia,  6, 30 ), 2 )
