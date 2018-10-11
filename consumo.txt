@@ -7,7 +7,7 @@ CalcioK2	0	0	0	0	0	0	0	0
 Duphostan 10 mg	130	0	42	42	42	0	0	0
 Enoxoparina	12	30	7	7	7	7	7	7
 Smorfolipide	0	1	0	0	1	0	0	0
-Somalgin Cardio 81mg	42	0	4	3	4	3	4	3
+Somalgin Cardio 81mg	39	3	7	7	7	7	7	7
 Utrogestan 200 mg	128	40	28	28	28	28	28	28
 VitaminaC - Cewin 500mg	5	37	7	7	7	7	7	7
 VitaminaE - Vita E 400mg	8	34	7	7	7	7	7	7
