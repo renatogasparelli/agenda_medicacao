@@ -7,6 +7,7 @@ import lib.calendario as cal
 from lib.medicamentos import *
 
 _AgendaItem = collections.namedtuple('_AgendaItem', 'datahora quantidade')
+_Intervalos = collections.namedtuple('_Intervalos', 'datainicio datafim')
 
 Posologias = {}
 class __Posologia(object):
@@ -53,8 +54,9 @@ Posologia_Smorfolipide = __Posologia( Smorfolipide )
 
 data_exame_beta = cal.semana_gestacao(4).inicio
 data_cuidado_borrinha = cal.data( 2018, 10, 2 )
+reinicio_somalgin = cal.semana_gestacao(12).inicio
 
-reinicio_somalgin = cal.datahora( 2018, 10, 9, 0, 0, 0)
+ViagemTresRios = _Intervalos( cal.data( 2018, 10, 12 ), cal.data( 2018, 10, 14 ) )
 
 for dia in cal.dias_entre( cal.DATA_CONTROLE_ESTOQUE, cal.DATA_CONTROLE_ESTOQUE_FIM ):
     

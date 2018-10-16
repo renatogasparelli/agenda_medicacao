@@ -80,6 +80,8 @@ obter_estoque( Duphostan ).registrar_entrada( dataregistro, 2 * 28, 87.17 )
 dataregistro = cal.datahora( 2018, 10, 8, 12, 00 )
 obter_estoque( Duphostan ).registrar_entrada( dataregistro, 2 * 28 + 3 * 14, 149.17 )
 
+dataregistro = cal.datahora( 2018, 10, 15, 13, 00 )
+obter_estoque( Enoxoparina ).registrar_entrada( dataregistro, 30, 0 )
 
 
 
