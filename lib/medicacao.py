@@ -52,11 +52,6 @@ Posologia_AdderaD3     = __Posologia( AdderaD3 )
 Posologia_CalcioK2     = __Posologia( CalcioK2 )
 Posologia_Smorfolipide = __Posologia( Smorfolipide )
 
-data_exame_beta = cal.semana_gestacao(4).inicio
-data_cuidado_borrinha = cal.data( 2018, 10, 2 )
-reinicio_somalgin = cal.semana_gestacao(12).inicio
-
-ViagemTresRios = _Intervalos( cal.data( 2018, 10, 12 ), cal.data( 2018, 10, 14 ) )
 
 for dia in cal.dias_entre( cal.DATA_CONTROLE_ESTOQUE, cal.DATA_CONTROLE_ESTOQUE_FIM ):
     
@@ -75,9 +70,8 @@ for dia in cal.dias_entre( cal.DATA_CONTROLE_ESTOQUE, cal.DATA_CONTROLE_ESTOQUE_
         Posologia_CalcioK2.agendar( cal.agendamento( dia, 12, 00 ), 1 )
         Posologia_CalcioK2.agendar( cal.agendamento( dia, 18, 00 ), 1 )
         
-    if reinicio_somalgin <= dia <= cal.semana_gestacao(36).fim:
-        Posologia_Somalgin.agendar( cal.agendamento( dia, 12, 00 ), 1  )
-            
+    if dia <= cal.semana_gestacao(36).fim:
+        Posologia_Somalgin.agendar( cal.agendamento( dia, 12, 00 ), 1  )     
     
     if dia <= cal.semana_gestacao(8).fim:
         Posologia_Duphostan.agendar( cal.agendamento( dia,  6, 30 ), 2 )
@@ -85,11 +79,11 @@ for dia in cal.dias_entre( cal.DATA_CONTROLE_ESTOQUE, cal.DATA_CONTROLE_ESTOQUE_
         Posologia_Duphostan.agendar( cal.agendamento( dia, 22, 30 ), 2 )
 
     if dia < cal.semana_gestacao(12).fim:
-        if dia < data_cuidado_borrinha:
+        if dia < cal.DATA_BORRINHA:
             Posologia_Utrogestan.agendar( cal.agendamento( dia,  6, 30 ), 1  )
             Posologia_Utrogestan.agendar( cal.agendamento( dia, 14, 30 ), 1  )
             Posologia_Utrogestan.agendar( cal.agendamento( dia, 22, 30 ), 1  )
-        elif dia > data_cuidado_borrinha:
+        elif dia > cal.DATA_BORRINHA:
             Posologia_Utrogestan.agendar( cal.agendamento( dia, 10, 00 ), 2  )
             Posologia_Utrogestan.agendar( cal.agendamento( dia, 22, 00 ), 2  )
         else:

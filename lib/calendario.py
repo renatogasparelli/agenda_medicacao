@@ -33,6 +33,9 @@ TRIMESTRES_GESTACAO = [ _Trimestre(1, 13), _Trimestre(14, 27), _Trimestre(28, 41
 
 DIAS_DA_SEMANA = [ 'Segunda', u'Terça', 'Quarta', 'Quinta', 'Sexta', u'Sábado', 'Domingo' ]
 
+#
+DATA_BORRINHA = datetime.datetime( 2018, 10, 2, 0, 0, 0 )
+
 def qual_semana_gestacao( dia ):
     for i in range(0, SEMANAS_GESTACAO_TOTAL):
         sg = SEMANAS_GESTACAO[i]
@@ -76,4 +79,5 @@ def dias_entre(data_inicio, data_fim, jump=1):
         if dia >= data_fim:
             break
         dia += jump*UM_DIA
+
 

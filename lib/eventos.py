@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from lib.medicamentos import *
 from lib.medicacao import *
 from lib.estoques import *
 
@@ -27,11 +28,38 @@ class EMedicacao ( _Evento ):
     
     def medicamento(self): return self.__medicamento
     def quantidade(self): return self.__agendamento.quantidade
-    
+
+
+nao_administrada = { x.nome() : set() for x in Medicamentos }
+
+tres_rios_ida   = cal.data( 2018, 10, 12 )
+nao_administrada[ Omega3.nome()    ].add( cal.agendamento( tres_rios_ida, 12, 00 ) )
+nao_administrada[ VitaminaE.nome() ].add( cal.agendamento( tres_rios_ida, 13, 00 ) )
+
+tres_rios_volta = cal.data( 2018, 10, 14 )
+nao_administrada[ Omega3.nome()    ].add( cal.agendamento( tres_rios_volta, 12, 00 ) )
+nao_administrada[ VitaminaE.nome() ].add( cal.agendamento( tres_rios_volta, 13, 00 ) )
+nao_administrada[ BTrati.nome()    ].add( cal.agendamento( tres_rios_volta,  7, 00 ) )
+nao_administrada[ VitaminaC.nome() ].add( cal.agendamento( tres_rios_volta,  7, 00 ) )
+
+# suspensao do somalgin
+somalgin_tomado = set([
+    cal.data( 2018, 10,  8 ),
+    cal.data( 2018, 10, 10 ),
+    cal.data( 2018, 10, 11 )
+])
+for x in cal.dias_entre( cal.DATA_BORRINHA, cal.semana_gestacao(12).inicio ):
+    if x in somalgin_tomado: continue
+    nao_administrada[ Somalgin.nome() ].add( cal.agendamento( x, 12, 00 ) )
+
 
 for medicacao in Posologias.values():
     medicamento = medicacao.medicamento()
     for agendamento in medicacao.agendamentos():
+        if ( agendamento.datahora in nao_administrada[ medicamento.nome() ] ):
+            #print medicamento.nome(), agendamento
+            continue
+        #
         Eventos.append( EMedicacao( medicamento, agendamento ) )
 
 Eventos.append( EExame( u'Exame Controle Heparina: Anti Xa', cal.semana_gestacao(12).inicio ) )
