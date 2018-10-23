@@ -64,7 +64,7 @@ for dia in cal.dias_entre( cal.DATA_CONTROLE_ESTOQUE, cal.DATA_CONTROLE_ESTOQUE_
         Posologia_VitaminaE.agendar( cal.agendamento( dia, 13, 00 ), 1  )
         Posologia_BTrati.agendar( cal.agendamento( dia, 7, 00 ), 1  )
         if cal.eh_sabado(dia):
-            Posologia_AdderaD3.agendar( cal.agendamento( dia,  7, 30 ), 1 )
+            Posologia_AdderaD3.agendar( cal.agendamento( dia,  12, 00 ), 1 )
     
     if dia > cal.semana_gestacao(12).fim:
         Posologia_CalcioK2.agendar( cal.agendamento( dia, 12, 00 ), 1 )

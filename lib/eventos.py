@@ -42,6 +42,12 @@ nao_administrada[ VitaminaE.nome() ].add( cal.agendamento( tres_rios_volta, 13, 
 nao_administrada[ BTrati.nome()    ].add( cal.agendamento( tres_rios_volta,  7, 00 ) )
 nao_administrada[ VitaminaC.nome() ].add( cal.agendamento( tres_rios_volta,  7, 00 ) )
 
+dia_enjoo = cal.data( 2018, 10, 21 )
+nao_administrada[ BTrati.nome()    ].add( cal.agendamento( dia_enjoo,  7, 00 ) )
+nao_administrada[ VitaminaE.nome() ].add( cal.agendamento( dia_enjoo, 13, 00 ) )
+nao_administrada[ VitaminaC.nome() ].add( cal.agendamento( dia_enjoo,  7, 00 ) )
+
+
 # suspensao do somalgin
 somalgin_tomado = set([
     cal.data( 2018, 10,  8 ),

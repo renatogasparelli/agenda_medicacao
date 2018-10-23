@@ -1,14 +1,14 @@
-			7	8	9	10	11	12
-Medicamento	Estoque Inicial	Necessidade	2018-10-22 até 2018-10-28	2018-10-29 até 2018-11-04	2018-11-05 até 2018-11-11	2018-11-12 até 2018-11-18	2018-11-19 até 2018-11-25	2018-11-26 até 2018-12-02
-5-Metilfolato 1 mg	70	0	7	7	7	7	7	7
-AdderaD3 7.000 Ui	4	2	1	1	1	1	1	1
-BeTrat	14	28	7	7	7	7	7	7
-CalcioK2	0	0	0	0	0	0	0	0
-Duphostan 10 mg	88	0	42	42	0	0	0	0
-Enoxoparina	35	7	7	7	7	7	7	7
-Smorfolipide	0	2	0	1	0	0	0	1
+			8	9	10	11	12	13
+Medicamento	Estoque Inicial	Necessidade	2018-10-29 até 2018-11-04	2018-11-05 até 2018-11-11	2018-11-12 até 2018-11-18	2018-11-19 até 2018-11-25	2018-11-26 até 2018-12-02	2018-12-03 até 2018-12-09
+5-Metilfolato 1 mg	63	0	7	7	7	7	7	0
+AdderaD3 7.000 Ui	3	2	1	1	1	1	1	0
+BeTrat	8	27	7	7	7	7	7	0
+CalcioK2	0	14	0	0	0	0	0	14
+Duphostan 10 mg	46	0	42	0	0	0	0	0
+Enoxoparina	28	14	7	7	7	7	7	7
+Smorfolipide	0	2	1	0	0	0	1	0
 Somalgin Cardio 81mg	42	0	7	7	7	7	7	7
-Utrogestan 200 mg	100	68	28	28	28	28	28	28
-VitaminaC - Cewin 500mg	29	13	7	7	7	7	7	7
-VitaminaE - Vita E 400mg	33	9	7	7	7	7	7	7
-Ômega Mater	13	29	7	7	7	7	7	7
+Utrogestan 200 mg	72	75	28	28	28	28	28	7
+VitaminaC - Cewin 500mg	23	12	7	7	7	7	7	0
+VitaminaE - Vita E 400mg	27	8	7	7	7	7	7	0
+Ômega Mater	6	36	7	7	7	7	7	7
