@@ -20,7 +20,7 @@ def exporta_expectativa_consumo():
     data = {}
     for i in range( sga, sgf ):
         sg = cal.semana_gestacao(i)
-        sgkey = str(sg.inicio)[:10] + u' até ' + str(sg.fim)[:10]
+        sgkey = str(sg.inicio)[2:10] + u' até ' + str(sg.fim)[2:10]
         data[  sgkey ] = {}
         for medicamento in Medicamentos:
             quantidade_acumulada = 0
@@ -33,19 +33,35 @@ def exporta_expectativa_consumo():
     
     sg = cal.semana_gestacao( sga )
     table = []
-    header = [ '', '', '' ] + [ str(x) for x in range( sga, sgf ) ]
-    table.append( '\t'.join(header) )
-    header = [ 'Medicamento', 'Estoque Inicial', 'Necessidade' ] + [ x for x in sorted(data.keys()) ]
-    table.append( '\t'.join(header) )
-    ref = data[ header[ -1 ] ]
+    
+    header1 = [ '', '']
+    for x in range( sga, sgf ):
+        header1.append(str(x) )
+        header1.append( '' )
+    table.append( '\t'.join(header1) )
+    
+    header2 = [ 'Medicamento', 'Estoque']
+    for x in sorted(data.keys()):
+        header2.append( x )
+        header2.append( 'Estoque' )
+    table.append( '\t'.join(header2) )
+    
+    
+    ref = data[ header2[ 2 ] ]
     for med in sorted(ref.keys()):
         medicamento = obter_medicamento( med )
         estoque = obter_estoque( medicamento )
         saldo = estoque.saldo(sg.inicio)
-        pedir = sum( [ data[x][med] for x in sorted(data.keys())] ) - saldo
-        if pedir < 0: pedir = 0
-        line = [ med, str( saldo ), str(pedir)  ] + [ str(data[x][med]) for x in sorted(data.keys()) ]
-        table.append( '\t'.join(line) )
+        
+        row = [ med, str(saldo) ]
+        for x in sorted(data.keys()):
+            consumo_na_semana = data[x][med]
+            row.append( str(consumo_na_semana) ) # consuma na semana 'x'
+            saldo -= consumo_na_semana
+            row.append( str(saldo)  )
+        
+        table.append( '\t'.join(row) )
+    
     
     with codecs.open( 'consumo.txt', 'w', 'utf-8') as fout:
         fout.write( '\n'.join(table) )
@@ -199,3 +215,4 @@ def __writedown( report, filename, titulo ):
     with codecs.open( filename, 'w', 'utf-8') as fout:
         fout.write( u'\n'.join(html) )
     
+

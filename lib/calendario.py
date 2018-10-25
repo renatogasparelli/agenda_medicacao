@@ -9,12 +9,19 @@ _Semana = collections.namedtuple('_Semana', 'inicio fim')
 _Trimestre = collections.namedtuple('_Trimestre', 'inicio fim')
 
 UM_DIA = datetime.timedelta(days=1)
+UMA_SEMANA = 7 * UM_DIA
 
 DATA_CONTROLE_ESTOQUE = datetime.datetime(2018, 10, 02, 0, 0, 0)
 
 BETA_HCG = datetime.datetime(2018, 10, 01)
-INICIO_GESTACAO         = datetime.datetime(2018, 10, 01,  0,  0, 0)  - 3 * 7 * UM_DIA
-INICIO_GESTACAO_FIM_DIA = datetime.datetime(2018, 10, 01, 23, 59, 59) - 3 * 7 * UM_DIA
+
+BETA_HCG_DELTA =  4 * UMA_SEMANA - UM_DIA
+
+INICIO_GESTACAO = datetime.datetime(
+    BETA_HCG.year, BETA_HCG.month, BETA_HCG.day,  0,  0, 0)  - BETA_HCG_DELTA
+
+INICIO_GESTACAO_FIM_DIA = datetime.datetime(
+    BETA_HCG.year, BETA_HCG.month, BETA_HCG.day, 23, 59, 59) - BETA_HCG_DELTA
 
 SEMANAS_GESTACAO_TOTAL = 41
 
