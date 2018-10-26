@@ -28,7 +28,7 @@ VitaminaE    = __Medicamento( 'VitaminaE - Vita E 400mg', 'comprimido', dosagem=
 Somalgin     = __Medicamento( 'Somalgin Cardio 81mg',  'comprimido', dosagem='81mg')
 Smorfolipide = __Medicamento( 'Smorfolipide' ,  'frasco')
 Enoxoparina  = __Medicamento( 'Enoxoparina', u'injeção')
-Duphostan    = __Medicamento( 'Duphostan 10 mg',  'comprimido', dosagem='10 mg', quantidade=u'28 cápsulas')
+Duphostan    = __Medicamento( 'Duphaston 10 mg',  'comprimido', dosagem='10 mg', quantidade=u'28 cápsulas')
 AdderaD3     = __Medicamento( 'AdderaD3 7.000 Ui',  'comprimido', dosagem='7.000 Ui')
 CalcioK2     = __Medicamento( 'CalcioK2',  'comprimido')
 
