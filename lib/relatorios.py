@@ -8,11 +8,49 @@ import lib.calendario as cal
 from lib.estoques import *
 from lib.eventos import *
 from lib.medicacao import *
+from lib.medicamentos import *
+
+def exporta_calendario():
+    
+    with codecs.open('calendario.html', 'w', 'utf-8') as fout:
+    
+        fout.write( 'data do beta: %s<br>' % str(cal.BETA_HCG)[:10] )
+        fout.write( 'data do DUM: %s<br>' % str(cal.DUM)[:10] )
+    
+        for i in range(1, 41):
+            sg = cal.semana_gestacao(i)
+            fout.write(  u'<p>semana %02s: de %s até %s</p>'%( i, str(sg.inicio)[:10], str(sg.fim)[:10] ) )
+    
+        hoje = cal.hoje()
+    
+        ignore_list = set( [
+                Omega3, CalcioK2, VitaminaE, VitaminaC, Enoxoparina, BTrati
+            ]
+        )
+    
+        for medicacao in Posologias.values():
+            medicamento = medicacao.medicamento()
+            if medicamento in ignore_list:
+                continue
+            fout.write( u'<ul>')
+            fout.write( u'<li>%s</li>' % medicamento.nome() )
+            fout.write( u'<ul>')
+            for agendamento in medicacao.agendamentos():
+                if hoje <= agendamento.datahora:
+                    fout.write( u'<li>Em: %s, %s unidade</li>' % ( str(agendamento.datahora)[:16], agendamento.quantidade ))
+            fout.write( u'</ul>')
+            fout.write( u'</ul>')
 
 
 def datahora_split( x ):
+    # semana gestacao
+    sg = cal.qual_semana_gestacao(x)
+    # delta dias
+    dd = ( x - cal.semana_gestacao( sg ).inicio) .days + 1
+    if dd == 7: wg = u'[aniversário %(semana)d semana(s) ]'%{'semana':sg }
+    else: wg = '[ %(semana)d semana(s) e %(dia)d dia(s) ]'%{ 'dia':dd, 'semana':sg - 1 }
     sx = str(x)
-    return sx[0:10] + ', ' + cal.dia_da_semana( x ), sx[10:16]
+    return sx[0:10] + ', ' + cal.dia_da_semana( x ) + ' ' + wg, sx[10:16]
 
 def exporta_expectativa_consumo():
     sga = cal.qual_semana_gestacao( cal.hoje() ) + 1
@@ -70,7 +108,7 @@ def exporta_expectativa_consumo():
 def exporta_dados_planilha():
     
     hoje = cal.hoje()
-    ultdia = hoje + 30 * cal.UM_DIA
+    ultdia = hoje + 45 * cal.UM_DIA
     sultdia = str(ultdia)[:10]
     
     grafico_data = {}

@@ -22,7 +22,7 @@ def obter_medicamento(nome_medicamento):
 Utrogestan   = __Medicamento( 'Utrogestan 200 mg', u'cápsula', dosagem='200 mg', quantidade=u'42 cápsulas')
 Metilfolato  = __Medicamento( '5-Metilfolato 1 mg', 'comprimido', dosagem='1 mg')
 VitaminaC    = __Medicamento( 'VitaminaC - Cewin 500mg', u'cápsula', dosagem='500mg', quantidade=u'30 cápsulas')
-BTrati       = __Medicamento( 'BeTrat',  'comprimido')
+BTrati       = __Medicamento( 'BeTrat',  'comprimido', dosagem='100mg, 100mg e 5000mcg', quantidade=u'42 cápuslas')
 Omega3       = __Medicamento( u'Ômega Mater', u'cápsula', dosagem='DHA 300 mg e EPA 120 mg', quantidade=u'30 cápsulas')
 VitaminaE    = __Medicamento( 'VitaminaE - Vita E 400mg', 'comprimido', dosagem='400mg', quantidade=u'30 comprimidos')
 Somalgin     = __Medicamento( 'Somalgin Cardio 81mg',  'comprimido', dosagem='81mg')

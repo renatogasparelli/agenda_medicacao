@@ -68,8 +68,8 @@ obter_estoque( Metilfolato ).registrar_entrada( dataregistro, 90 )
 
 dataregistro = cal.datahora( 2018, 10, 2, 12, 00 )
 obter_estoque( Omega3 ).registrar_entrada( dataregistro, 30, 58.83 )
-obter_estoque( Utrogestan ).registrar_entrada( dataregistro, 42, 120.08 )
 obter_estoque( Duphostan ).registrar_entrada( dataregistro, 28, 45.00 )
+obter_estoque( Utrogestan ).registrar_entrada( dataregistro, 42, 120.08 )
 
 dataregistro = cal.datahora( 2018, 10, 5, 12, 00 )
 obter_estoque( Utrogestan ).registrar_entrada( dataregistro, 3 * 42, 3 * 117.00 )
@@ -86,5 +86,11 @@ obter_estoque( Enoxoparina ).registrar_entrada( dataregistro, 30, 0 )
 dataregistro = cal.datahora( 2018, 10, 17, 13, 00 )
 obter_estoque( VitaminaE ).registrar_entrada( dataregistro, 30, 32.52 )
 obter_estoque( VitaminaC ).registrar_entrada( dataregistro, 30, 21.55 )
+
+dataregistro = cal.datahora( 2018, 10, 29, 12, 00 )
+obter_estoque( Omega3 ).registrar_entrada( dataregistro, 30, 74.49 )
+obter_estoque( Duphostan ).registrar_entrada( dataregistro, 2 * 28, 2*43.32 )
+obter_estoque( BTrati ).registrar_entrada( dataregistro, 42, 64.37 )
+
 
 

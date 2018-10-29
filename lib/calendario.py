@@ -15,13 +15,14 @@ DATA_CONTROLE_ESTOQUE = datetime.datetime(2018, 10, 02, 0, 0, 0)
 
 BETA_HCG = datetime.datetime(2018, 10, 01)
 
-BETA_HCG_DELTA =  4 * UMA_SEMANA - UM_DIA
+# DATA_ULTIMA_MESTRUACAO
+DUM = datetime.datetime(2018, 9, 3)
 
-INICIO_GESTACAO = datetime.datetime(
-    BETA_HCG.year, BETA_HCG.month, BETA_HCG.day,  0,  0, 0)  - BETA_HCG_DELTA
+DEPOIS_DUM = 1
 
-INICIO_GESTACAO_FIM_DIA = datetime.datetime(
-    BETA_HCG.year, BETA_HCG.month, BETA_HCG.day, 23, 59, 59) - BETA_HCG_DELTA
+INICIO_GESTACAO = datetime.datetime( DUM.year, DUM.month, DUM.day,  0,  0, 0) + DEPOIS_DUM * UM_DIA
+
+INICIO_GESTACAO_FIM_DIA = datetime.datetime( DUM.year, DUM.month, DUM.day, 23, 59, 59) + DEPOIS_DUM * UM_DIA
 
 SEMANAS_GESTACAO_TOTAL = 41
 
