@@ -29,7 +29,7 @@ def exporta_calendario():
     
         hoje = cal.hoje()
     
-        select_list = set( [ Smorfolipide ] )
+        select_list = set( [ Smorfolipide, Utrogestan ] )
     
         for medicacao in Posologias.values():
             medicamento = medicacao.medicamento()
@@ -60,8 +60,8 @@ def datahora_split( x ):
     return sx[0:10] + ', ' + cal.dia_da_semana( x ) + ' ' + wg, sx[10:16]
 
 def exporta_expectativa_consumo():
-    sga = cal.qual_semana_gestacao( cal.hoje() ) + 1
-    sgf = min( sga + 6, cal.SEMANAS_GESTACAO_TOTAL - sga + 1)
+    sga = cal.qual_semana_gestacao( cal.hoje() )
+    sgf = min( sga + 7, cal.SEMANAS_GESTACAO_TOTAL - sga + 1)
     data = {}
     for i in range( sga, sgf ):
         sg = cal.semana_gestacao(i)
@@ -114,7 +114,7 @@ def exporta_expectativa_consumo():
 
 def exporta_dados_planilha():
     
-    hoje = cal.hoje()
+    hoje = cal.hoje() - 6 * cal.UM_DIA
     ultdia = hoje + 45 * cal.UM_DIA
     sultdia = str(ultdia)[:10]
     

@@ -21,6 +21,7 @@ for evento in Eventos:
         medicamento = evento.medicamento()
         estoque = obter_estoque( medicamento )
         try:
+            #print  evento.datahora(), medicamento.nome(), estoque.saldo()
             estoque.registrar_saida( evento.datahora(), evento.quantidade() )
         except SaldoInsuficienteException as e:
             pass

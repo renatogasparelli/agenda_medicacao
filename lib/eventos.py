@@ -37,15 +37,28 @@ nao_administrada[ Omega3.nome()    ].add( cal.agendamento( tres_rios_ida, 12, 00
 nao_administrada[ VitaminaE.nome() ].add( cal.agendamento( tres_rios_ida, 13, 00 ) )
 
 tres_rios_volta = cal.data( 2018, 10, 14 )
-nao_administrada[ Omega3.nome()    ].add( cal.agendamento( tres_rios_volta, 12, 00 ) )
-nao_administrada[ VitaminaE.nome() ].add( cal.agendamento( tres_rios_volta, 13, 00 ) )
 nao_administrada[ BTrati.nome()    ].add( cal.agendamento( tres_rios_volta,  7, 00 ) )
 nao_administrada[ VitaminaC.nome() ].add( cal.agendamento( tres_rios_volta,  7, 00 ) )
+nao_administrada[ Omega3.nome()    ].add( cal.agendamento( tres_rios_volta, 12, 00 ) )
+nao_administrada[ VitaminaE.nome() ].add( cal.agendamento( tres_rios_volta, 13, 00 ) )
+
 
 dia_enjoo = cal.data( 2018, 10, 21 )
 nao_administrada[ BTrati.nome()    ].add( cal.agendamento( dia_enjoo,  7, 00 ) )
-nao_administrada[ VitaminaE.nome() ].add( cal.agendamento( dia_enjoo, 13, 00 ) )
 nao_administrada[ VitaminaC.nome() ].add( cal.agendamento( dia_enjoo,  7, 00 ) )
+nao_administrada[ VitaminaE.nome() ].add( cal.agendamento( dia_enjoo, 13, 00 ) )
+
+
+nao_administrada[ VitaminaE.nome() ].add( cal.agendamento( cal.data( 2018, 10, 29 ), 13, 00 ) )
+nao_administrada[ Omega3.nome()    ].add( cal.agendamento( cal.data( 2018, 11, 01 ), 12, 00 ) )
+
+dia_aula_sabado = cal.data( 2018, 11, 3 )
+nao_administrada[ BTrati.nome()    ].add( cal.agendamento( dia_aula_sabado,  7, 00 ) )
+nao_administrada[ VitaminaC.nome() ].add( cal.agendamento( dia_aula_sabado,  7, 00 ) )
+nao_administrada[ Omega3.nome()    ].add( cal.agendamento( dia_aula_sabado, 12, 00 ) )
+nao_administrada[ VitaminaE.nome() ].add( cal.agendamento( dia_aula_sabado, 13, 00 ) )
+
+
 
 
 # suspensao do somalgin

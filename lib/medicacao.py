@@ -52,6 +52,10 @@ Posologia_AdderaD3     = __Posologia( AdderaD3 )
 Posologia_CalcioK2     = __Posologia( CalcioK2 )
 Posologia_Smorfolipide = __Posologia( Smorfolipide )
 
+def data_cmp(d1, d2):
+    return ( d1.year == d2.year
+        and d1.month == d2.month
+        and d1.day == d2.day )
 
 for dia in cal.dias_entre( cal.DATA_CONTROLE_ESTOQUE, cal.DATA_CONTROLE_ESTOQUE_FIM ):
     
@@ -81,18 +85,27 @@ for dia in cal.dias_entre( cal.DATA_CONTROLE_ESTOQUE, cal.DATA_CONTROLE_ESTOQUE_
         Posologia_Duphostan.agendar( cal.agendamento( dia,  8, 00 ), 2 )
         Posologia_Duphostan.agendar( cal.agendamento( dia, 20, 00 ), 2 )
 
-    if dia < cal.semana_gestacao(12).fim:
-        if dia < cal.DATA_BORRINHA:
-            Posologia_Utrogestan.agendar( cal.agendamento( dia,  6, 30 ), 1  )
-            Posologia_Utrogestan.agendar( cal.agendamento( dia, 14, 30 ), 1  )
-            Posologia_Utrogestan.agendar( cal.agendamento( dia, 22, 30 ), 1  )
-        elif dia > cal.DATA_BORRINHA:
-            Posologia_Utrogestan.agendar( cal.agendamento( dia, 10, 00 ), 2  )
-            Posologia_Utrogestan.agendar( cal.agendamento( dia, 22, 00 ), 2  )
-        else:
-            Posologia_Utrogestan.agendar( cal.agendamento( dia,  6, 30 ), 1  )
-            Posologia_Utrogestan.agendar( cal.agendamento( dia, 14, 30 ), 1  )
-            Posologia_Utrogestan.agendar( cal.agendamento( dia, 22, 30 ), 2  )
+    
+    if dia < cal.DATA_BORRINHA:
+        Posologia_Utrogestan.agendar( cal.agendamento( dia,  6, 30 ), 1  )
+        Posologia_Utrogestan.agendar( cal.agendamento( dia, 14, 30 ), 1  )
+        Posologia_Utrogestan.agendar( cal.agendamento( dia, 22, 30 ), 1  )
+    elif data_cmp( dia, cal.DATA_BORRINHA):
+        Posologia_Utrogestan.agendar( cal.agendamento( dia,  6, 30 ), 1  )
+        Posologia_Utrogestan.agendar( cal.agendamento( dia, 14, 30 ), 1  )
+        Posologia_Utrogestan.agendar( cal.agendamento( dia, 22, 30 ), 2  )
+    elif cal.DATA_BORRINHA < dia < cal.DATA_SANGRAMENTO:
+        Posologia_Utrogestan.agendar( cal.agendamento( dia, 10, 00 ), 2  )
+        Posologia_Utrogestan.agendar( cal.agendamento( dia, 22, 00 ), 2  )
+    elif data_cmp(dia, cal.DATA_SANGRAMENTO):
+        Posologia_Utrogestan.agendar( cal.agendamento( dia, 10, 00 ), 2  )
+        Posologia_Utrogestan.agendar( cal.agendamento( dia, 16, 00 ), 2  )
+        Posologia_Utrogestan.agendar( cal.agendamento( dia, 22, 00 ), 2  )
+    elif cal.DATA_SANGRAMENTO <= dia < cal.semana_gestacao(12).fim:
+        Posologia_Utrogestan.agendar( cal.agendamento( dia,  4, 00 ), 2  )
+        Posologia_Utrogestan.agendar( cal.agendamento( dia, 10, 00 ), 2  )
+        Posologia_Utrogestan.agendar( cal.agendamento( dia, 16, 00 ), 2  )
+        Posologia_Utrogestan.agendar( cal.agendamento( dia, 22, 00 ), 2  )
     elif dia <= cal.semana_gestacao(16).fim:
         Posologia_Utrogestan.agendar( cal.agendamento( dia, 22, 30 ), 1  )
     
@@ -107,6 +120,7 @@ for dia in cal.dias_entre( cal.DATA_CONTROLE_ESTOQUE,
 
 
     
+
 
 
 

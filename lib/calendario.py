@@ -42,7 +42,8 @@ TRIMESTRES_GESTACAO = [ _Trimestre(1, 13), _Trimestre(14, 27), _Trimestre(28, 41
 DIAS_DA_SEMANA = [ 'Segunda', u'Terça', 'Quarta', 'Quinta', 'Sexta', u'Sábado', 'Domingo' ]
 
 #
-DATA_BORRINHA = datetime.datetime( 2018, 10, 2, 0, 0, 0 )
+DATA_BORRINHA    = datetime.datetime( 2018, 10, 2, 0, 0, 0 )
+DATA_SANGRAMENTO = datetime.datetime( 2018, 11, 5, 0, 0, 0 ) + UM_DIA
 
 def qual_semana_gestacao( dia ):
     for i in range(0, SEMANAS_GESTACAO_TOTAL):
