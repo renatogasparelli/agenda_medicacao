@@ -12,10 +12,16 @@ from lib.medicamentos import *
 
 def exporta_calendario():
     
-    with codecs.open('calendario.html', 'w', 'utf-8') as fout:
+    with codecs.open('agenda_calendario.html', 'w', 'utf-8') as fout:
     
         fout.write( 'data do beta: %s<br>' % str(cal.BETA_HCG)[:10] )
         fout.write( 'data do DUM: %s<br>' % str(cal.DUM)[:10] )
+        
+        data_parto = cal.semana_gestacao( 40 ).fim
+        
+        fout.write( 'data do parto: %s<br>' % str( data_parto )[:10] )
+        fout.write( u'Retorno licença Mamãe: %s<br>' % str( data_parto + 180 * cal.UM_DIA )[:10] )
+        fout.write( u'Retorno licença Papai: %s<br>' % str( data_parto +  20 * cal.UM_DIA )[:10] )
     
         for i in range(1, 41):
             sg = cal.semana_gestacao(i)
@@ -23,21 +29,22 @@ def exporta_calendario():
     
         hoje = cal.hoje()
     
-        ignore_list = set( [
-                Omega3, CalcioK2, VitaminaE, VitaminaC, Enoxoparina, BTrati
-            ]
-        )
+        select_list = set( [ Smorfolipide ] )
     
         for medicacao in Posologias.values():
             medicamento = medicacao.medicamento()
-            if medicamento in ignore_list:
+            if medicamento not in select_list:
                 continue
             fout.write( u'<ul>')
             fout.write( u'<li>%s</li>' % medicamento.nome() )
             fout.write( u'<ul>')
-            for agendamento in medicacao.agendamentos():
-                if hoje <= agendamento.datahora:
-                    fout.write( u'<li>Em: %s, %s unidade</li>' % ( str(agendamento.datahora)[:16], agendamento.quantidade ))
+            agendamentos = medicacao.agendamentos()
+            lagendamentos = len( agendamentos )
+            for i in range( lagendamentos ):
+                agendamento = agendamentos[i]
+                if agendamento.datahora < hoje:
+                    continue
+                fout.write( u'<li>Em: %s, %s unidade</li>' % ( str(agendamento.datahora)[:16], agendamento.quantidade ))
             fout.write( u'</ul>')
             fout.write( u'</ul>')
 

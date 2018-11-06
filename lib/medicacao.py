@@ -78,8 +78,8 @@ for dia in cal.dias_entre( cal.DATA_CONTROLE_ESTOQUE, cal.DATA_CONTROLE_ESTOQUE_
         Posologia_Duphostan.agendar( cal.agendamento( dia, 14, 30 ), 2 )
         Posologia_Duphostan.agendar( cal.agendamento( dia, 22, 30 ), 2 )
     elif dia <= cal.semana_gestacao(12).fim:
-        Posologia_Duphostan.agendar( cal.agendamento( dia, 10, 00 ), 2 )
-        Posologia_Duphostan.agendar( cal.agendamento( dia, 22, 00 ), 2 )
+        Posologia_Duphostan.agendar( cal.agendamento( dia,  8, 00 ), 2 )
+        Posologia_Duphostan.agendar( cal.agendamento( dia, 20, 00 ), 2 )
 
     if dia < cal.semana_gestacao(12).fim:
         if dia < cal.DATA_BORRINHA:

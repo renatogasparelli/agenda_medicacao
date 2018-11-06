@@ -1,5 +1,4 @@
 data	5-Metilfolato 1 mg	AdderaD3 7.000 Ui	BeTrat	CalcioK2	Duphaston 10 mg	Enoxoparina	Somalgin Cardio 81mg	Utrogestan 200 mg	VitaminaC - Cewin 500mg	VitaminaE - Vita E 400mg	Ômega Mater
-2018-10-29	63	3	8	0	46	28	42	72	23	27	6
 2018-10-30	62	3	49	0	96	27	42	68	22	26	35
 2018-10-31	61	3	48	0	92	26	42	64	21	25	34
 2018-11-01	60	3	47	0	88	25	42	60	20	24	33
@@ -45,3 +44,4 @@ data	5-Metilfolato 1 mg	AdderaD3 7.000 Ui	BeTrat	CalcioK2	Duphaston 10 mg	Enoxop
 2018-12-11	34	0	21	0	0	0	22	0	0	0	0
 2018-12-12	34	0	21	0	0	0	21	0	0	0	0
 2018-12-13	34	0	21	0	0	0	20	0	0	0	0
+2018-12-14	34	0	21	0	0	0	19	0	0	0	0

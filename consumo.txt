@@ -1,14 +1,14 @@
-		9		10		11		12		13		14	
-Medicamento	Estoque	18-10-30 até 18-11-05	Estoque	18-11-06 até 18-11-12	Estoque	18-11-13 até 18-11-19	Estoque	18-11-20 até 18-11-26	Estoque	18-11-27 até 18-12-03	Estoque	18-12-04 até 18-12-10	Estoque
-5-Metilfolato 1 mg	62	7	55	7	48	7	41	7	34	0	34	0	34
-AdderaD3 7.000 Ui	3	1	2	1	1	1	0	1	-1	0	-1	0	-1
-BeTrat	49	7	42	7	35	7	28	7	21	0	21	0	21
-CalcioK2	0	0	0	0	0	0	0	0	0	14	-14	14	-28
-Duphaston 10 mg	96	28	68	28	40	28	12	28	-16	0	-16	0	-16
-Enoxoparina	27	7	20	7	13	7	6	7	-1	7	-8	7	-15
-Smorfolipide	0	1	-1	0	-1	0	-1	0	-1	1	-2	0	-2
+		10		11		12		13		14		15	
+Medicamento	Estoque	18-11-06 até 18-11-12	Estoque	18-11-13 até 18-11-19	Estoque	18-11-20 até 18-11-26	Estoque	18-11-27 até 18-12-03	Estoque	18-12-04 até 18-12-10	Estoque	18-12-11 até 18-12-17	Estoque
+5-Metilfolato 1 mg	55	7	48	7	41	7	34	0	34	0	34	0	34
+AdderaD3 7.000 Ui	2	1	1	1	0	1	-1	0	-1	0	-1	0	-1
+BeTrat	42	7	35	7	28	7	21	0	21	0	21	0	21
+CalcioK2	0	0	0	0	0	0	0	14	-14	14	-28	14	-42
+Duphaston 10 mg	68	28	40	28	12	28	-16	0	-16	0	-16	0	-16
+Enoxoparina	20	7	13	7	6	7	-1	7	-8	7	-15	7	-22
+Smorfolipide	0	0	0	0	0	0	0	1	-1	0	-1	0	-1
 Somalgin Cardio 81mg	42	7	35	7	28	7	21	7	14	7	7	7	0
-Utrogestan 200 mg	68	28	40	28	12	28	-16	28	-44	7	-51	7	-58
-VitaminaC - Cewin 500mg	22	7	15	7	8	7	1	7	-6	0	-6	0	-6
-VitaminaE - Vita E 400mg	26	7	19	7	12	7	5	7	-2	0	-2	0	-2
-Ômega Mater	35	7	28	7	21	7	14	7	7	7	0	7	-7
+Utrogestan 200 mg	40	28	12	28	-16	28	-44	7	-51	7	-58	7	-65
+VitaminaC - Cewin 500mg	15	7	8	7	1	7	-6	0	-6	0	-6	0	-6
+VitaminaE - Vita E 400mg	19	7	12	7	5	7	-2	0	-2	0	-2	0	-2
+Ômega Mater	28	7	21	7	14	7	7	7	0	7	-7	7	-14
