@@ -59,15 +59,14 @@ nao_administrada[ Omega3.nome()    ].add( cal.agendamento( dia_aula_sabado, 12, 
 nao_administrada[ VitaminaE.nome() ].add( cal.agendamento( dia_aula_sabado, 13, 00 ) )
 
 
-
-
 # suspensao do somalgin
+somalgin_suspenso = cal.dias_entre( cal.DATA_BORRINHA, cal.data( 2018, 11, 12 ) )
 somalgin_tomado = set([
     cal.data( 2018, 10,  8 ),
     cal.data( 2018, 10, 10 ),
     cal.data( 2018, 10, 11 )
 ])
-for x in cal.dias_entre( cal.DATA_BORRINHA, cal.semana_gestacao(12).inicio ):
+for x in somalgin_suspenso:
     if x in somalgin_tomado: continue
     nao_administrada[ Somalgin.nome() ].add( cal.agendamento( x, 12, 00 ) )
 

@@ -93,4 +93,7 @@ obter_estoque( Duphostan ).registrar_entrada( dataregistro, 2 * 28, 2*43.32 )
 obter_estoque( BTrati ).registrar_entrada( dataregistro, 42, 64.37 )
 
 
+dataregistro = cal.datahora( 2018, 11, 8, 12, 00 )
+obter_estoque( Utrogestan ).registrar_entrada( dataregistro, 4 * 42, 4 * 117.00 )
+
 

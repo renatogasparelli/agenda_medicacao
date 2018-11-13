@@ -37,7 +37,7 @@ NASCIMENTO = SEMANAS_GESTACAO[ SEMANAS_GESTACAO_TOTAL - 1 ].fim
 
 DATA_CONTROLE_ESTOQUE_FIM = NASCIMENTO + 60 * UM_DIA
 
-TRIMESTRES_GESTACAO = [ _Trimestre(1, 13), _Trimestre(14, 27), _Trimestre(28, 41) ]
+TRIMESTRES_GESTACAO = [ _Trimestre(1, 13), _Trimestre(14, 26), _Trimestre(27, 41) ]
 
 DIAS_DA_SEMANA = [ 'Segunda', u'Terça', 'Quarta', 'Quinta', 'Sexta', u'Sábado', 'Domingo' ]
 
