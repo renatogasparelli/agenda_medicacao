@@ -4,7 +4,7 @@ Medicamento	Estoque	18-11-13 até 18-11-19	Estoque	18-11-20 até 18-11-26	Estoqu
 AdderaD3 7.000 Ui	1	1	0	1	-1	0	-1	0	-1	0	-1	0	-1	0	-1
 BeTrat	36	7	29	7	22	0	22	0	22	0	22	0	22	0	22
 CalcioK2	0	0	0	0	0	14	-14	14	-28	14	-42	14	-56	14	-70
-Duphaston 10 mg	40	28	12	28	-16	0	-16	0	-16	0	-16	0	-16	0	-16
+Duphaston 10 mg	24	42	-18	42	-60	0	-60	0	-60	0	-60	0	-60	0	-60
 Enoxoparina	13	7	6	7	-1	7	-8	7	-15	7	-22	7	-29	7	-36
 Smorfolipide	0	0	0	0	0	1	-1	0	-1	0	-1	0	-1	1	-2
 Somalgin Cardio 81mg	42	7	35	7	28	7	21	7	14	7	7	7	0	7	-7

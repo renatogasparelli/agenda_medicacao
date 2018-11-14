@@ -81,9 +81,13 @@ for dia in cal.dias_entre( cal.DATA_CONTROLE_ESTOQUE, cal.DATA_CONTROLE_ESTOQUE_
         Posologia_Duphostan.agendar( cal.agendamento( dia,  6, 30 ), 2 )
         Posologia_Duphostan.agendar( cal.agendamento( dia, 14, 30 ), 2 )
         Posologia_Duphostan.agendar( cal.agendamento( dia, 22, 30 ), 2 )
-    elif dia <= cal.semana_gestacao(12).fim:
+    elif cal.semana_gestacao(8).fim < dia < cal.DATA_SANGRAMENTO:
         Posologia_Duphostan.agendar( cal.agendamento( dia,  8, 00 ), 2 )
         Posologia_Duphostan.agendar( cal.agendamento( dia, 20, 00 ), 2 )
+    elif cal.DATA_SANGRAMENTO <= dia < cal.semana_gestacao(12).fim:
+        Posologia_Duphostan.agendar( cal.agendamento( dia,  6, 30 ), 2 )
+        Posologia_Duphostan.agendar( cal.agendamento( dia, 14, 30 ), 2 )
+        Posologia_Duphostan.agendar( cal.agendamento( dia, 22, 30 ), 2 )
 
     
     if dia < cal.DATA_BORRINHA:
@@ -94,14 +98,14 @@ for dia in cal.dias_entre( cal.DATA_CONTROLE_ESTOQUE, cal.DATA_CONTROLE_ESTOQUE_
         Posologia_Utrogestan.agendar( cal.agendamento( dia,  6, 30 ), 1  )
         Posologia_Utrogestan.agendar( cal.agendamento( dia, 14, 30 ), 1  )
         Posologia_Utrogestan.agendar( cal.agendamento( dia, 22, 30 ), 2  )
-    elif cal.DATA_BORRINHA < dia < cal.DATA_SANGRAMENTO:
+    elif cal.DATA_BORRINHA < dia < cal.DATA_SANGRAMENTO_SEGUINTE:
         Posologia_Utrogestan.agendar( cal.agendamento( dia, 10, 00 ), 2  )
         Posologia_Utrogestan.agendar( cal.agendamento( dia, 22, 00 ), 2  )
-    elif data_cmp(dia, cal.DATA_SANGRAMENTO):
+    elif data_cmp(dia, cal.DATA_SANGRAMENTO_SEGUINTE):
         Posologia_Utrogestan.agendar( cal.agendamento( dia, 10, 00 ), 2  )
         Posologia_Utrogestan.agendar( cal.agendamento( dia, 16, 00 ), 2  )
         Posologia_Utrogestan.agendar( cal.agendamento( dia, 22, 00 ), 2  )
-    elif cal.DATA_SANGRAMENTO <= dia < cal.semana_gestacao(12).fim:
+    elif cal.DATA_SANGRAMENTO_SEGUINTE <= dia < cal.semana_gestacao(12).fim:
         Posologia_Utrogestan.agendar( cal.agendamento( dia,  4, 00 ), 2  )
         Posologia_Utrogestan.agendar( cal.agendamento( dia, 10, 00 ), 2  )
         Posologia_Utrogestan.agendar( cal.agendamento( dia, 16, 00 ), 2  )

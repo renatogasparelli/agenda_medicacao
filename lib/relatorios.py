@@ -12,6 +12,12 @@ from lib.medicamentos import *
 
 def exporta_calendario():
     
+    trimestre_label = [ '',
+        'primeiro trimestre',
+        'segundo trimestre',
+        'terceiro trimestre',
+    ]
+    
     with codecs.open('agenda_calendario.html', 'w', 'utf-8') as fout:
     
         fout.write( 'data do beta: %s<br>' % str(cal.BETA_HCG)[:10] )
@@ -25,7 +31,9 @@ def exporta_calendario():
     
         for i in range(1, 41):
             sg = cal.semana_gestacao(i)
-            fout.write(  u'<p>semana %02s: de %s até %s</p>'%( i, str(sg.inicio)[:10], str(sg.fim)[:10] ) )
+            itg = cal.qual_trimestre_gestacao( sg.fim )
+            tgl = trimestre_label[itg]
+            fout.write(  u'<p>semana %02s [%s]: de %s até %s</p>'%( i, tgl, str(sg.inicio)[:10], str(sg.fim)[:10] ) )
     
         hoje = cal.hoje()
     

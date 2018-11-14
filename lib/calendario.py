@@ -37,13 +37,14 @@ NASCIMENTO = SEMANAS_GESTACAO[ SEMANAS_GESTACAO_TOTAL - 1 ].fim
 
 DATA_CONTROLE_ESTOQUE_FIM = NASCIMENTO + 60 * UM_DIA
 
-TRIMESTRES_GESTACAO = [ _Trimestre(1, 13), _Trimestre(14, 26), _Trimestre(27, 41) ]
+TRIMESTRES_GESTACAO = [ _Trimestre(1, 14), _Trimestre(15, 27), _Trimestre(28, 41) ]
 
 DIAS_DA_SEMANA = [ 'Segunda', u'Terça', 'Quarta', 'Quinta', 'Sexta', u'Sábado', 'Domingo' ]
 
 #
 DATA_BORRINHA    = datetime.datetime( 2018, 10, 2, 0, 0, 0 )
-DATA_SANGRAMENTO = datetime.datetime( 2018, 11, 5, 0, 0, 0 ) + UM_DIA
+DATA_SANGRAMENTO = datetime.datetime( 2018, 11, 5, 0, 0, 0 )
+DATA_SANGRAMENTO_SEGUINTE = DATA_SANGRAMENTO + UM_DIA
 
 def qual_semana_gestacao( dia ):
     for i in range(0, SEMANAS_GESTACAO_TOTAL):
@@ -51,6 +52,15 @@ def qual_semana_gestacao( dia ):
         if sg.inicio <= dia <= sg.fim:
             return i + 1
     return -1
+
+def qual_trimestre_gestacao( dia ):
+    sg = qual_semana_gestacao( dia )
+    for i in range(3):
+        tg = TRIMESTRES_GESTACAO[i]
+        if tg.inicio <= sg <= tg.fim:
+            return i + 1
+    return -1
+        
 
 def semana_gestacao( i ):
     if i == 'fim':
