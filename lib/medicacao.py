@@ -113,13 +113,14 @@ for dia in cal.dias_entre( cal.DATA_CONTROLE_ESTOQUE, cal.DATA_CONTROLE_ESTOQUE_
     elif dia <= cal.semana_gestacao(16).fim:
         Posologia_Utrogestan.agendar( cal.agendamento( dia, 22, 30 ), 1  )
     
-    
 
-smfdelta = 4 * 7 # 4 semanas
-doses = 5
-for dia in cal.dias_entre( cal.DATA_CONTROLE_ESTOQUE,
-        cal.DATA_CONTROLE_ESTOQUE + ( doses - 1 ) * smfdelta * cal.UM_DIA, smfdelta ):
-    Posologia_Smorfolipide.agendar( cal.agendamento( dia, 15, 00 ), 1 )
+Posologia_Smorfolipide.agendar( cal.agendamento( cal.data( 2018, 10,  2), 15, 00 ), 1 )
+Posologia_Smorfolipide.agendar( cal.agendamento( cal.data( 2018, 10, 30), 15, 00 ), 1 )
+Posologia_Smorfolipide.agendar( cal.agendamento( cal.data( 2018, 11, 27), 15, 00 ), 1 )
+Posologia_Smorfolipide.agendar( cal.agendamento( cal.data( 2018, 12, 18), 15, 00 ), 1 )
+Posologia_Smorfolipide.agendar( cal.agendamento( cal.data( 2018, 01, 15), 15, 00 ), 1 )
+
+
 
 
 

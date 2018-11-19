@@ -30,7 +30,7 @@ Smorfolipide = __Medicamento( 'Smorfolipide' ,  'frasco')
 Enoxoparina  = __Medicamento( 'Enoxoparina', u'injeção')
 Duphostan    = __Medicamento( 'Duphaston 10 mg',  'comprimido', dosagem='10 mg', quantidade=u'28 cápsulas')
 AdderaD3     = __Medicamento( 'AdderaD3 7.000 Ui',  'comprimido', dosagem='7.000 Ui')
-CalcioK2     = __Medicamento( 'CalcioK2',  'comprimido')
+CalcioK2     = __Medicamento( u'Caldê K2',  'comprimido')
 
 
 

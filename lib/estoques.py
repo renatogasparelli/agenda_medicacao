@@ -102,3 +102,10 @@ obter_estoque( Duphostan ).registrar_entrada( dataregistro, 28, 43.32 )
 dataregistro = cal.datahora( 2018, 11, 16, 12, 00 )
 obter_estoque( Enoxoparina ).registrar_entrada( dataregistro, 30, 0 )
 
+dataregistro = cal.datahora( 2018, 11, 18, 12, 00 )
+obter_estoque( Duphostan ).registrar_entrada( dataregistro, 28 + 14, 44.00 + 22.70 )
+obter_estoque( VitaminaC ).registrar_entrada( dataregistro, 30, 21.30 )
+obter_estoque( Omega3 ).registrar_entrada( dataregistro, 30, 51.50 )
+obter_estoque( AdderaD3 ).registrar_entrada( databalanco, 10,  36.15)
+obter_estoque( CalcioK2 ).registrar_entrada( databalanco, 30,  76.30)
+
