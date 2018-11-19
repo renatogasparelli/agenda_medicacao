@@ -104,14 +104,23 @@ def exporta_expectativa_consumo():
     for med in sorted(ref.keys()):
         medicamento = obter_medicamento( med )
         estoque = obter_estoque( medicamento )
-        saldo = estoque.saldo(sg.inicio)
+        saldo = estoque.saldo( sg.inicio )
         
+        i = 1
         row = [ med, str(saldo) ]
         for x in sorted(data.keys()):
             consumo_na_semana = data[x][med]
             row.append( str(consumo_na_semana) ) # consuma na semana 'x'
             saldo -= consumo_na_semana
+            
+            # ajuste do saldo, com adições ou subtrações em estoque!
+            sgai = cal.semana_gestacao( sga + i  )
+            saldo_em_estoque = estoque.saldo( sgai.inicio )
+            if saldo_em_estoque != saldo and saldo_em_estoque > 0:
+                saldo = saldo_em_estoque
+            
             row.append( str(saldo)  )
+            i += 1
         
         table.append( '\t'.join(row) )
     
