@@ -111,7 +111,8 @@ for dia in cal.dias_entre( cal.DATA_CONTROLE_ESTOQUE, cal.DATA_CONTROLE_ESTOQUE_
         Posologia_Utrogestan.agendar( cal.agendamento( dia, 16, 00 ), 2  )
         Posologia_Utrogestan.agendar( cal.agendamento( dia, 22, 00 ), 2  )
     elif dia <= cal.semana_gestacao(16).fim:
-        Posologia_Utrogestan.agendar( cal.agendamento( dia, 22, 30 ), 1  )
+        Posologia_Utrogestan.agendar( cal.agendamento( dia,  8, 00 ), 1  )
+        Posologia_Utrogestan.agendar( cal.agendamento( dia, 20, 30 ), 1  )
     
 
 Posologia_Smorfolipide.agendar( cal.agendamento( cal.data( 2018, 10,  2), 15, 00 ), 1 )
