@@ -67,6 +67,7 @@ def datahora_split( x ):
     sx = str(x)
     return sx[0:10] + ', ' + cal.dia_da_semana( x ) + ' ' + wg, sx[10:16]
 
+
 def exporta_expectativa_consumo():
     sga = cal.qual_semana_gestacao( cal.hoje() )
     sgf = min( sga + 7, cal.SEMANAS_GESTACAO_TOTAL - sga + 1)
@@ -131,7 +132,7 @@ def exporta_expectativa_consumo():
 
 def exporta_dados_planilha():
     
-    hoje = cal.hoje() - 6 * cal.UM_DIA
+    hoje = cal.hoje() - cal.UM_DIA
     ultdia = hoje + 45 * cal.UM_DIA
     sultdia = str(ultdia)[:10]
     
@@ -144,12 +145,6 @@ def exporta_dados_planilha():
         estoque = obter_estoque( medicamento )
         posologia = obter_posologia( medicamento )
         
-        estah_tratando = False
-        for dia in cal.dias_entre( hoje, ultdia ):
-            if posologia.estah_tratando( dia ):
-                estah_tratando = True
-                break
-        
         #if not estah_tratando:
         #    continue
         
@@ -158,10 +153,10 @@ def exporta_dados_planilha():
         for dia in cal.dias_entre( hoje, ultdia ):
             fdia = cal.agendamento( dia, 0, 0 )
             sdia = str(fdia)[:10]
-            saldo = estoque.saldo(fdia)
-            if not estah_tratando and saldo == 0:
+            if not posologia.estah_tratando( dia ):
                 grafico_data[ medicamento.nome() ][ sdia ] = ''
             else:
+                saldo = estoque.saldo(fdia)
                 grafico_data[ medicamento.nome() ][ sdia ] = saldo
             i+=1
         
@@ -215,6 +210,7 @@ def exporta_agendamentos_complexos():
             report[data][horario].append( x.descricao() )
     
     __writedown( report, 'agendas_complexas.html', u'Agendas Complexas' )
+
 
 
 def registra_agendamento( report, evento ):

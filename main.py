@@ -8,7 +8,7 @@ from lib.estoques import *
 from lib.relatorios import *
 from lib.medicacao import *
 
-hoje = cal.hoje() - 8 * cal.UM_DIA
+hoje = cal.hoje() - cal.UM_DIA
 atequando = cal.hoje() + 30 * cal.UM_DIA
 
 report = {}

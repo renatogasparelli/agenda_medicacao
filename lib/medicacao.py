@@ -115,11 +115,13 @@ for dia in cal.dias_entre( cal.DATA_CONTROLE_ESTOQUE, cal.DATA_CONTROLE_ESTOQUE_
         Posologia_Utrogestan.agendar( cal.agendamento( dia, 20, 30 ), 1  )
     
 
-Posologia_Smorfolipide.agendar( cal.agendamento( cal.data( 2018, 10,  2), 15, 00 ), 1 )
-Posologia_Smorfolipide.agendar( cal.agendamento( cal.data( 2018, 10, 30), 15, 00 ), 1 )
-Posologia_Smorfolipide.agendar( cal.agendamento( cal.data( 2018, 11, 27), 15, 00 ), 1 )
-Posologia_Smorfolipide.agendar( cal.agendamento( cal.data( 2018, 12, 18), 15, 00 ), 1 )
-Posologia_Smorfolipide.agendar( cal.agendamento( cal.data( 2018, 01, 15), 15, 00 ), 1 )
+
+DiaSmorfolipide = cal.data( 2018, 10,  2)
+SemanasIntervalo = [4, 4, 3, 4, 4]
+for i in SemanasIntervalo:
+    Posologia_Smorfolipide.agendar( cal.agendamento( DiaSmorfolipide, 15, 00 ), 1 )
+    DiaSmorfolipide = DiaSmorfolipide + i * cal.UMA_SEMANA
+
 
 
 

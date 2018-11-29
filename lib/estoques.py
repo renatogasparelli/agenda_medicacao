@@ -109,3 +109,7 @@ obter_estoque( Omega3 ).registrar_entrada( dataregistro, 30, 51.50 )
 obter_estoque( AdderaD3 ).registrar_entrada( databalanco, 10,  36.15)
 obter_estoque( CalcioK2 ).registrar_entrada( databalanco, 30,  76.30)
 
+dataregistro = cal.datahora( 2018, 11, 24, 0, 00 )
+obter_estoque( Omega3 ).registrar_entrada( dataregistro, 30, 0 ) # encontrado
+
+
