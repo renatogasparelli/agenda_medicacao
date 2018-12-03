@@ -69,7 +69,7 @@ def datahora_split( x ):
 
 
 def exporta_expectativa_consumo():
-    sga = cal.qual_semana_gestacao( cal.hoje() )
+    sga = cal.qual_semana_gestacao( cal.hoje() + cal.UM_DIA )
     sgf = min( sga + 7, cal.SEMANAS_GESTACAO_TOTAL - sga + 1)
     data = {}
     for i in range( sga, sgf ):

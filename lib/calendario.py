@@ -17,6 +17,7 @@ BETA_HCG = datetime.datetime(2018, 10, 01)
 
 # DATA_ULTIMA_MESTRUACAO
 DUM = datetime.datetime(2018, 9, 3)
+#DUM = datetime.datetime(2018, 9, 5)
 
 DEPOIS_DUM = 1
 
@@ -45,6 +46,7 @@ DIAS_DA_SEMANA = [ 'Segunda', u'Terça', 'Quarta', 'Quinta', 'Sexta', u'Sábado'
 DATA_BORRINHA    = datetime.datetime( 2018, 10, 2, 0, 0, 0 )
 DATA_SANGRAMENTO = datetime.datetime( 2018, 11, 5, 0, 0, 0 )
 DATA_SANGRAMENTO_SEGUINTE = DATA_SANGRAMENTO + UM_DIA
+DATA_CONSULTA_BARINI = datetime.datetime( 2018, 12, 3, 0, 0, 0 )
 
 def qual_semana_gestacao( dia ):
     for i in range(0, SEMANAS_GESTACAO_TOTAL):
