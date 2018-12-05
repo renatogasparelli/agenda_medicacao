@@ -11,4 +11,4 @@ Somalgin Cardio 81mg	28	7	21	7	14	7	7	7	0	7	-7	7	-14	7	-21
 Utrogestan 200 mg	42	14	28	14	14	14	0	14	-14	0	-14	0	-14	0	-14
 VitaminaC - Cewin 500mg	25	0	25	0	25	0	25	0	25	0	25	0	25	0	25
 VitaminaE - Vita E 400mg	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-Ômega Mater	69	7	62	7	55	7	48	7	41	7	34	7	27	7	20
+Ômega Mater	59	7	52	7	45	7	38	7	31	7	24	7	17	7	10
