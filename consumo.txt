@@ -1,14 +1,14 @@
-		13		14		15		16		17		18		19	
-Medicamento	Estoque	18-11-27 até 18-12-03	Estoque	18-12-04 até 18-12-10	Estoque	18-12-11 até 18-12-17	Estoque	18-12-18 até 18-12-24	Estoque	18-12-25 até 18-12-31	Estoque	19-01-01 até 19-01-07	Estoque	19-01-08 até 19-01-14	Estoque
+		14		15		16		17		18		19		20	
+Medicamento	Estoque	18-12-04 até 18-12-10	Estoque	18-12-11 até 18-12-17	Estoque	18-12-18 até 18-12-24	Estoque	18-12-25 até 18-12-31	Estoque	19-01-01 até 19-01-07	Estoque	19-01-08 até 19-01-14	Estoque	19-01-15 até 19-01-21	Estoque
 5-Metilfolato 1 mg	34	0	34	0	34	0	34	0	34	0	34	0	34	0	34
 AdderaD3 7.000 Ui	9	0	9	0	9	0	9	0	9	0	9	0	9	0	9
 BeTrat	22	0	22	0	22	0	22	0	22	0	22	0	22	0	22
-Caldê K2	30	14	16	14	2	14	-12	14	-26	14	-40	14	-54	14	-68
-Duphaston 10 mg	10	0	10	0	10	0	10	0	10	0	10	0	10	0	10
-Enoxoparina	29	7	22	7	15	7	8	7	1	7	-6	7	-13	7	-20
-Smorfolipide	0	1	-1	0	-1	0	-1	1	-2	0	-2	0	-2	0	-2
-Somalgin Cardio 81mg	28	7	21	7	14	7	7	7	0	7	-7	7	-14	7	-21
-Utrogestan 200 mg	42	14	28	14	14	14	0	14	-14	0	-14	0	-14	0	-14
+Caldê K2	16	14	2	14	-12	14	-26	14	-40	14	-54	14	-68	14	-82
+Duphaston 10 mg	8	14	64	14	50	14	36	0	36	0	36	0	36	0	36
+Enoxoparina	22	7	15	7	8	7	1	7	-6	7	-13	7	-20	7	-27
+Smorfolipide	0	0	0	0	0	1	-1	0	-1	0	-1	0	-1	1	-2
+Somalgin Cardio 81mg	53	7	46	7	39	7	32	7	25	7	18	7	11	7	4
+Utrogestan 200 mg	28	14	56	14	42	14	28	0	28	0	28	0	28	0	28
 VitaminaC - Cewin 500mg	25	0	25	0	25	0	25	0	25	0	25	0	25	0	25
 VitaminaE - Vita E 400mg	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-Ômega Mater	59	7	52	7	45	7	38	7	31	7	24	7	17	7	10
+Ômega Mater	52	7	45	7	38	7	31	7	24	7	17	7	10	7	3

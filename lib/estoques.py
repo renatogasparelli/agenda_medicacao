@@ -113,4 +113,9 @@ dataregistro = cal.datahora( 2018, 11, 24, 0, 00 )
 obter_estoque( Omega3 ).registrar_entrada( dataregistro, 30, 0 ) # encontrado
 obter_estoque( Omega3 ).registrar_entrada( dataregistro,-10, 0 ) # encontrado
 
+dataregistro = cal.datahora( 2018, 12, 4, 12, 00 )
+obter_estoque( Utrogestan ).registrar_entrada( dataregistro, 42, 117.00 )
 
+dataregistro = cal.datahora( 2018, 12, 5, 12, 00 )
+obter_estoque( Duphostan ).registrar_entrada( dataregistro, 28 + 3 * 14, 46.30 + 3 * 23.15 )
+obter_estoque( Somalgin ).registrar_entrada( databalanco, 32, 9.90 )

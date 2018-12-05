@@ -70,6 +70,11 @@ for dia in cal.dias_entre( cal.DATA_CONTROLE_ESTOQUE, cal.DATA_CONTROLE_ESTOQUE_
         if cal.eh_sabado(dia):
             Posologia_AdderaD3.agendar( cal.agendamento( dia,  12, 00 ), 1 )
     
+    if cal.DATA_CONSULTA_BARINI <= dia <= cal.semana_gestacao(16).fim:
+        Posologia_Duphostan.agendar( cal.agendamento( dia,  8, 00 ), 1 )
+        Posologia_Duphostan.agendar( cal.agendamento( dia, 20, 00 ), 1 )
+    
+    
     if dia > cal.semana_gestacao(12).fim:
         Posologia_CalcioK2.agendar( cal.agendamento( dia, 12, 00 ), 1 )
         Posologia_CalcioK2.agendar( cal.agendamento( dia, 18, 00 ), 1 )
@@ -111,16 +116,15 @@ for dia in cal.dias_entre( cal.DATA_CONTROLE_ESTOQUE, cal.DATA_CONTROLE_ESTOQUE_
         Posologia_Utrogestan.agendar( cal.agendamento( dia, 16, 00 ), 2  )
         Posologia_Utrogestan.agendar( cal.agendamento( dia, 22, 00 ), 2  )
     elif dia <= cal.semana_gestacao(16).fim:
-        Posologia_Utrogestan.agendar( cal.agendamento( dia,  8, 00 ), 1  )
-        Posologia_Utrogestan.agendar( cal.agendamento( dia, 20, 30 ), 1  )
+        Posologia_Utrogestan.agendar( cal.agendamento( dia, 22, 00 ), 2  )
     
 
 
 DiaSmorfolipide = cal.data( 2018, 10,  2)
-SemanasIntervalo = [4, 4, 3, 4, 4]
+SemanasIntervalo = [0, 4, 4, 3, 4, 4]
 for i in SemanasIntervalo:
-    Posologia_Smorfolipide.agendar( cal.agendamento( DiaSmorfolipide, 15, 00 ), 1 )
     DiaSmorfolipide = DiaSmorfolipide + i * cal.UMA_SEMANA
+    Posologia_Smorfolipide.agendar( cal.agendamento( DiaSmorfolipide, 15, 00 ), 1 )
 
 
 
