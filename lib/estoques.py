@@ -119,3 +119,7 @@ obter_estoque( Utrogestan ).registrar_entrada( dataregistro, 42, 117.00 )
 dataregistro = cal.datahora( 2018, 12, 5, 12, 00 )
 obter_estoque( Duphostan ).registrar_entrada( dataregistro, 28 + 3 * 14, 46.30 + 3 * 23.15 )
 obter_estoque( Somalgin ).registrar_entrada( databalanco, 32, 9.90 )
+
+
+dataregistro = cal.datahora( 2018, 12, 7, 12, 00 )
+obter_estoque( CalcioK2 ).registrar_entrada( databalanco, 60,  80.00 )
