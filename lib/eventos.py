@@ -71,6 +71,7 @@ for x in somalgin_suspenso:
     nao_administrada[ Somalgin.nome() ].add( cal.agendamento( x, 12, 00 ) )
 
 
+
 for medicacao in Posologias.values():
     medicamento = medicacao.medicamento()
     for agendamento in medicacao.agendamentos():

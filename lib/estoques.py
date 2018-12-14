@@ -122,4 +122,14 @@ obter_estoque( Somalgin ).registrar_entrada( databalanco, 32, 9.90 )
 
 
 dataregistro = cal.datahora( 2018, 12, 7, 12, 00 )
-obter_estoque( CalcioK2 ).registrar_entrada( databalanco, 60,  80.00 )
+obter_estoque( CalcioK2 ).registrar_entrada( databalanco, 2 * 30,  2 * 80.00 )
+
+
+dataregistro = cal.datahora( 2018, 12, 12, 12, 00 )
+obter_estoque( CalcioK2 ).registrar_entrada( databalanco, 30,  80.00 )
+
+dataregistro = cal.datahora( 2018, 12, 14, 12, 00 )
+obter_estoque( Enoxoparina ).registrar_entrada( databalanco, 30,  0 )
+
+
+

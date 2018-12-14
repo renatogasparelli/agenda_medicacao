@@ -48,6 +48,8 @@ DATA_SANGRAMENTO = datetime.datetime( 2018, 11, 5, 0, 0, 0 )
 DATA_SANGRAMENTO_SEGUINTE = DATA_SANGRAMENTO + UM_DIA
 DATA_CONSULTA_BARINI = datetime.datetime( 2018, 12, 3, 0, 0, 0 )
 
+DATA_SANGRAMENTO_2 = datetime.datetime( 2018, 12, 12, 0, 0, 0 )
+
 def qual_semana_gestacao( dia ):
     for i in range(0, SEMANAS_GESTACAO_TOTAL):
         sg = SEMANAS_GESTACAO[i]
