@@ -46,7 +46,7 @@ def main():
                 
             data.append ( album )
     
-    with codecs.open( 'md5_music_f.txt', 'w', 'UTF-8' ) as fout:
+    with codecs.open( jsonname, 'w', 'UTF-8' ) as fout:
         fout.write( json.dumps(data, indent=4, sort_keys=True) )
         
 
