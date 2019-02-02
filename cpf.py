@@ -2,29 +2,51 @@
 # -*- coding: utf-8 -*-
 # renato
 
-import itertools
+import os
+import hashlib
+import json
+import codecs
+
 
 def main():
-    V10 = range( 10 )
-    digits = [ 0, 5, 9, 9, 2, 3, None, None, None ]
-    for i, j, k in itertools.product( V10, V10, V10 ):
-        digits[6] = i
-        digits[7] = j
-        digits[8] = k
-        if ( calc_dv( digits ) == 4
-                and  calc_dv( digits + [ 4 ] ) == 5 ):
-            print digits, 45
 
-def calc_dv( digits ):
-    ldigits = len(digits)
-    acm = 0
-    for i in range(ldigits):
-        k = ( ldigits - i + 1 )
-        acm += k * digits[i]
-    digit = acm % 11
-    if digit == 0 or digit == 1:
-        return 0
-    return 11 - digit
+    def md5sun( x ):
+        m = hashlib.md5()
+        with open( x, 'rb' ) as fin:
+            m.update( fin.read() )
+        return m.hexdigest()
+
+    data = []
+
+    home = '/cygdrive/f/Musics'
+    for albumname in os.listdir( home ):
+        albumhome = os.path.join( home, albumname )
+        if not os.path.isdir( albumhome ):
+            continue
+        print albumhome        
+        for root, dirs, files in os.walk( albumhome ):
+    
+            album = {
+                'home':albumhome,
+                'album':albumname,
+                'musicas':[]
+            }
+            
+            for fname in files:
+                filefullpath = os.path.join( root, fname )
+                
+                album['musicas'].append(
+                    {
+                        'arquivo':fname,
+                        'md5': md5sun( filefullpath )
+                    }
+                )
+                
+            data.append ( album )
+    
+    with codecs.open( 'md5_music_f.txt', 'w', 'UTF-8' ) as fout:
+        fout.write( json.dumps(data, indent=4, sort_keys=True) )
+        
 
 main()
     
