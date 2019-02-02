@@ -9,11 +9,14 @@ import codecs
 
 
 def main():
-    home, jsonname = ( '/cygdrive/f/Musics', 'md5_music_f2.json')
-    #home, jsonname = ( '/cygdrive/w/Music', 'md5_music_w2.json')
+    #home, jsonname = ( '/cygdrive/f/Musics', 'md5_music_f2.json')
+    home, jsonname = ( '/cygdrive/w/Music', 'md5_music_w2.json')
     process( home, jsonname )
 
 def process(home, jsonname):
+    
+    
+    
     data = []
     
     for albumname in os.listdir( home ):
