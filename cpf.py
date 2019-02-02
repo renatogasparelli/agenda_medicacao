@@ -9,23 +9,21 @@ import codecs
 
 
 def main():
+    home, jsonname = ( '/cygdrive/f/Musics', 'md5_music_f2.json')
+    #home, jsonname = ( '/cygdrive/w/Music', 'md5_music_w2.json')
+    process( home, jsonname )
 
-    def md5sun( x ):
-        m = hashlib.md5()
-        with open( x, 'rb' ) as fin:
-            m.update( fin.read() )
-        return m.hexdigest()
-
+def process(home, jsonname):
     data = []
-
-    #home, jsonname = ( '/cygdrive/f/Musics', 'md5_music_f.txt')
-    home, jsonname = ( '/cygdrive/w/Music', 'md5_music_w.txt')
+    
     for albumname in os.listdir( home ):
         albumhome = os.path.join( home, albumname )
         if not os.path.isdir( albumhome ):
             continue
         print albumhome        
         for root, dirs, files in os.walk( albumhome ):
+            if len( files ) == 0:
+                continue
     
             album = {
                 'home':albumhome,
@@ -40,7 +38,8 @@ def main():
                     {
                         'arquivo':fname,
                         'filefullpath':filefullpath,
-                        'md5': md5sun( filefullpath )
+                        'md5': md5sun( filefullpath ),
+                        'size': os.path.getsize( filefullpath )
                     }
                 )
                 
@@ -49,6 +48,12 @@ def main():
     with codecs.open( jsonname, 'w', 'UTF-8' ) as fout:
         fout.write( json.dumps(data, indent=4, sort_keys=True) )
         
+
+def md5sun( x ):
+    m = hashlib.md5()
+    with open( x, 'rb' ) as fin:
+        m.update( fin.read() )
+    return m.hexdigest()
 
 main()
     
