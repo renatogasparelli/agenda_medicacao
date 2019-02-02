@@ -18,7 +18,8 @@ def main():
 
     data = []
 
-    home = '/cygdrive/f/Musics'
+    #home, jsonname = ( '/cygdrive/f/Musics', 'md5_music_f.txt')
+    home, jsonname = ( '/cygdrive/w/Music', 'md5_music_w.txt')
     for albumname in os.listdir( home ):
         albumhome = os.path.join( home, albumname )
         if not os.path.isdir( albumhome ):
@@ -38,6 +39,7 @@ def main():
                 album['musicas'].append(
                     {
                         'arquivo':fname,
+                        'filefullpath':filefullpath,
                         'md5': md5sun( filefullpath )
                     }
                 )
